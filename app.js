@@ -39,7 +39,7 @@ app.use(session({
     resave: false,
     saveUninitialized: true,
     cookie: {
-        maxAge: 60*60*24, // Session will last for 10 seconds
+        maxAge: 3 * 24 * 60 * 60 * 1000, // Session will last for 10 seconds
         httpOnly: true
     }
 }));

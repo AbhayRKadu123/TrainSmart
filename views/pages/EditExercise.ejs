@@ -1,0 +1,49 @@
+<%- layout('boilerplate.ejs') %>
+<form method="post" action="/editexercise/ <%=id1%>/ <%=id2%>?_method=patch">
+
+    <div class="card mb-3">
+      <table class="table card-img-top">
+
+        <thead>
+      <h1 class="display-3 card-title">Edit Page</h1>
+
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Reps</th>
+            <th scope="col">Weight</th>
+            <th scope="col">btn</th>
+          </tr>
+        </thead>
+        <tbody>
+<%for(let i=0;i<data.sets.reps.length;i++){%>
+  <tr>
+    <th scope="row"><%=i+1%></th>
+    <td>     <input style="border: none;" class="form-control" name="reps[<%=i%>]" type="text" value="<%=data.sets.reps[i]%>" placeholder="enter reps">
+    </td>
+    <td>     <input style="border: none;" class="form-control" name="weight[<%=i%>]" type="text" value="<%=data.sets.weight[i]%>" placeholder="enter weight">
+    </td>
+    <td>  <button class="btn btn-danger">del</button></td>
+  </tr>
+  <%}%>
+          
+        </tbody>
+      </table>
+      
+      <div class="card-body">
+         <input class="form-control" name="exercise" type="text" value="<%=data.exercise%>" placeholder="Exercise">
+         <h5 class="card-title"> </h5>
+        <p class="card-text"> <select name="Muscle" class="form-select" aria-label="Default select example">
+          <option selected Muscle="1">One</option>
+          <option Muscle="2">Two</option>
+          <option Muscle="3">Three</option>
+        </select></p>
+       
+        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+    <button class="btn btn-primary">submit</button>
+      
+      </div>
+    </div>
+   
+
+
+</form>

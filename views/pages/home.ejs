@@ -1,0 +1,56 @@
+<%- layout('boilerplate.ejs') %>
+
+
+<i class="fa-solid fa-house"></i>
+<figure class="mb-3 text-center">
+    <blockquote class="blockquote">
+      <p><%=quote[0].q%></p>
+    </blockquote>
+    <figcaption class="blockquote-footer">
+      Author <cite title="Source Title"><%=quote[0].a%></cite>
+    </figcaption>
+  </figure>
+<div class="row row-cols-1 row-cols-md-2 g-4">
+
+  <div class="card mb-3 col mx-auto p-2" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Exercise Library</h5>
+      <!-- <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6> -->
+      <p class="card-text">This comprehensive resource is designed to help you explore a wide range of exercises, tailored to meet your fitness goals, preferences, and levels. Whether you’re a beginner or an advanced athlete, you’ll find valuable information to enhance your workout routine.</p>
+      
+      <a href="/getexercises" class="btn btn-primary">Explore</a>
+    </div>
+  </div>
+  
+  <div class="card mb-3 col mx-auto p-2 " style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Push Pull Legs</h5>
+      <!-- <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6> -->
+      <p class="card-text">The Push-Pull-Legs (PPL) split is structured around three types of workouts: push (chest, shoulders, triceps), pull (back, biceps), and legs (quads, hamstrings, calves), allowing for high frequency and volume, often performed 2-3 times per week.</p>
+      <a href="/pushpullleg" class="btn btn-primary">Explore</a>
+     </div>
+  </div>
+
+  <div class="card mb-3 col mx-auto p-2" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Single Muscle</h5>
+      <!-- <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6> -->
+      <p class="card-text">Single Muscle Split focuses on training one muscle group per session (e.g., chest day, back day), typically hitting each muscle group once a week for maximum intensity.</p>
+      <a href="/SingleMuscle" class="btn btn-primary">Explore</a>
+      
+    </div>
+  </div>
+
+  <div class="card mb-3 col mx-auto p-2" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Upper-Lower</h5>
+      <!-- <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6> -->
+      <p class="card-text"> The Upper-Lower Split alternates between upper body workouts (chest, back, shoulders, arms) and lower body workouts (quads, hamstrings, glutes, calves), providing a balanced approach to muscle development with 2-4 sessions per week. Each routine has its benefits, allowing individuals to choose based on their goals, schedule, and recovery needs.</p>
+      <a href="/upperlower" class="btn btn-primary">Explore</a>
+   
+    </div>
+  </div>
+
+
+
+</div>

@@ -1,0 +1,38 @@
+<%- layout('boilerplate.ejs') %>
+<div class="row row-cols-1 row-cols-md-2 g-4">
+<%for(let i=0;i<data.length;i++){%>
+  
+    <div class="card mb-3 col mx-auto p-2" style="width: 18rem;">
+        <div class="card-body">
+         
+          <h5 class="card-title">Session&nbsp<%=i+1%></h5>
+         
+         <% let dt=`${data[i].date}`;%>
+        <%dt=dt.split(' ')%>
+        
+
+       
+
+          <h6 class="card-subtitle mb-2 text-body-secondary">Date&nbsp:&nbsp<%=dt[2]%>-<%=dt[1]%>-<%=dt[3]%></h6>
+          <h6 class="card-subtitle mb-2 text-body-secondary">Day&nbsp:&nbsp<%=dt[0]%></h6>
+
+          <p class="card-text"><%if(data[i]. workoutNotes.trim()==""){%>
+            Even a bad workout is better than no workout at all
+        <%}else{%><%=data[i]. workoutNotes.trim()%> <%}%>
+        </p>
+        <%var id=data[i]._id%>
+        
+          
+          <a href='/viewsession/<%=data[i]._id%>' class="btn btn-primary mx-auto p-2">See Session</a>
+          
+          <form style="display: inline;" method="POST" action="/delete-session/<%=data[i]._id%>?_method=DELETE">
+            <button class="btn btn-danger mx-auto p-2" type="submit">Delete Session</button>
+          </form>
+
+
+        </div>
+      </div>
+
+<%}%>
+
+</div>

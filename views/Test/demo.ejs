@@ -1,0 +1,12 @@
+<%- layout('boilerplate.ejs') %>
+<%for(let i=0;i<data.length;i++){%>
+  <div class="card" style="width: 18rem;">
+    <%=data.gifUrl%>
+      <img src="<%=data[i].gifUrl%>" class="card-img-top" alt="...">
+      <div class="card-body">
+        <p class="card-text"><%=data[i].instructions[0]%>></p>
+      </div>
+    </div>
+
+<%}%>
+   

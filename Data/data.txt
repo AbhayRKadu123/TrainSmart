@@ -1,0 +1,567 @@
+[
+  {
+    _id: ObjectId('6719e5a94b2b4ff033fcdee7'),
+    exercise_name: 'Bench Press',
+    targeted_muscle: 'Chest',
+    equipment: 'Barbell',
+    instructions: [
+      'Lie back on a flat bench with a barbell positioned over your chest.',
+      'Lower the barbell to your chest, keeping your elbows at a 45-degree angle.',
+      'Press the barbell back up to the starting position.'
+    ],
+    sets: 3,
+    reps: '6-8',
+    image_url: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhKCgtxMOLLAvkXbDYrToEQ2OirO6g1b4yjWckkn_dCxmmR-8fOPJ3oLPeq41Sat0N923F97ocxaJIOFB6pFS3XdlWLxSZFboYt9nbud5zBztWGGPLuw61laIx4xuHdt7NWC1gCDuRPppKiReUSQovi9EzuIoDjSzR7XOzQkGoY5L3mHpxmAhvkbbbM6Q/w400-h400/Barbell-Bench-Press.gif',
+    __v: 0
+  }
+]
+TrainSmart> db.exercises.deleteMany()
+MongoshInvalidInputError: [COMMON-10001] Missing required argument at position 0 (Collection.deleteMany)
+TrainSmart> db.exercises.deleteMany({})
+{ acknowledged: true, deletedCount: 1 }
+TrainSmart>  db.exercises.deleteMany()
+MongoshInvalidInputError: [COMMON-10001] Missing required argument at position 0 (Collection.deleteMany)
+TrainSmart> db.exercises.deleteMany({})
+{ acknowledged: true, deletedCount: 1 }
+TrainSmart> db.exercisedbs.drop({})
+true
+TrainSmart> db.exercises.drop({})
+true
+TrainSmart>  db.exercises.drop({})
+true
+TrainSmart>  db.exercises.drop({})
+true
+TrainSmart> db.exercises.find({})
+[
+  {
+    _id: ObjectId('6719f0043e2ded9bf38f0dd4'),
+    exercise_name: 'Bench Press',
+    targeted_muscle: 'Chest',
+    equipment: 'Barbell',
+    instructions: [
+      'Lie back on a flat bench with a barbell positioned over your chest.',
+      'Lower the barbell to your chest, keeping your elbows at a 45-degree angle.',
+      'Press the barbell back up to the starting position.'
+    ],
+    sets: 3,
+    reps: '6-8',
+    image_url: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhKCgtxMOLLAvkXbDYrToEQ2OirO6g1b4yjWckkn_dCxmmR-8fOPJ3oLPeq41Sat0N923F97ocxaJIOFB6pFS3XdlWLxSZFboYt9nbud5zBztWGGPLuw61laIx4xuHdt7NWC1gCDuRPppKiReUSQovi9EzuIoDjSzR7XOzQkGoY5L3mHpxmAhvkbbbM6Q/w400-h400/Barbell-Bench-Press.gif',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6719f0043e2ded9bf38f0dd5'),
+    exercise_name: 'Push-Ups',
+    targeted_muscle: 'Chest, Triceps',
+    equipment: 'Bodyweight',
+    instructions: [
+      'Get into a plank position with your hands placed shoulder-width apart.',
+      'Lower your body until your chest almost touches the floor.',
+      'Push back up to the starting position.'
+    ],
+    sets: 3,
+    reps: '10-15',
+    image_url: 'https://www.inspireusafoundation.org/wp-content/uploads/2023/06/plyometric-push-ups.gif',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6719f0043e2ded9bf38f0dd6'),
+    exercise_name: 'Dumbbell Flyes',
+    targeted_muscle: 'Chest',
+    equipment: 'Dumbbells',
+    instructions: [
+      'Lie back on a flat bench with a dumbbell in each hand.',
+      'Extend your arms above your chest with a slight bend in the elbows.',
+      'Lower the dumbbells out to the sides until you feel a stretch in your chest.',
+      'Bring the dumbbells back to the starting position.'
+    ],
+    sets: 3,
+    reps: '10-12',
+    image_url: 'https://th.bing.com/th/id/R.530bd32f5a362ccf6acde6ee530ea92f?rik=kpdvSGzHZIISlg&riu=http%3a%2f%2fnewlife.com.cy%2fwp-content%2fuploads%2f2019%2f11%2f03081301-Dumbbell-Fly_Chest-FIX_360.gif&ehk=TK5KmeJcMtmKCQJtbeLlyY78LI98Fo1o28XksW6qST8%3d&risl=&pid=ImgRaw&r=0',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6719f0043e2ded9bf38f0dd7'),
+    exercise_name: 'Incline Bench Press',
+    targeted_muscle: 'Upper Chest',
+    equipment: 'Barbell',
+    instructions: [
+      'Set an incline bench to a 30-45 degree angle.',
+      'Lie back on the bench and hold the barbell above your chest.',
+      'Lower the barbell to your upper chest.',
+      'Press it back up to the starting position.'
+    ],
+    sets: 3,
+    reps: '6-8',
+    image_url: 'https://www.fitadium.com/conseils/wp-content/uploads/2020/08/00471301-Barbell-Incline-Bench-Press_Chest_720.gif',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6719f0043e2ded9bf38f0dd8'),
+    exercise_name: 'Dumbbell Shoulder Press',
+    targeted_muscle: 'Shoulders',
+    equipment: 'Dumbbells',
+    instructions: [
+      'Sit on a bench with back support, holding a dumbbell in each hand at shoulder height.',
+      'Press the dumbbells overhead until your arms are fully extended.',
+      'Lower them back to the starting position.'
+    ],
+    sets: 3,
+    reps: '8-10',
+    image_url: 'https://boxlifemagazine.com/wp-content/uploads/2024/02/Seated-Dumbbell-Overhead-Press.gif',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6719f0043e2ded9bf38f0dd9'),
+    exercise_name: 'Lateral Raises',
+    targeted_muscle: 'Shoulders',
+    equipment: 'Dumbbells',
+    instructions: [
+      'Stand with a dumbbell in each hand at your sides.',
+      'Raise the dumbbells out to the sides until they reach shoulder height.',
+      'Lower them back to the starting position.'
+    ],
+    sets: 3,
+    reps: '10-12',
+    image_url: 'https://www.inspireusafoundation.org/wp-content/uploads/2022/03/dumbbell-lateral-raise.gif',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6719f0043e2ded9bf38f0dda'),
+    exercise_name: 'Front Raises',
+    targeted_muscle: 'Shoulders',
+    equipment: 'Dumbbells',
+    instructions: [
+      'Stand with a dumbbell in each hand at your sides.',
+      'Raise the dumbbells in front of you to shoulder height.',
+      'Lower them back to the starting position.'
+    ],
+    sets: 3,
+    reps: '10-12',
+    image_url: 'https://homeworkouts.org/wp-content/uploads/anim-dumbbell-front-raises.gif',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6719f0043e2ded9bf38f0ddb'),
+    exercise_name: 'Bent-Over Rows',
+    targeted_muscle: 'Back',
+    equipment: 'Barbell',
+    instructions: [
+      'Stand with your feet shoulder-width apart, holding a barbell.',
+      'Bend your knees slightly and lean forward at the hips.',
+      'Pull the barbell towards your lower rib cage, squeezing your shoulder blades together.',
+      'Lower the barbell back to the starting position.'
+    ],
+    sets: 3,
+    reps: '8-10',
+    image_url: 'https://th.bing.com/th/id/R.bc7fb79315d13d39b9612813a641ca5b?rik=IvHIvVMCpwdwsA&riu=http%3a%2f%2fnewlife.com.cy%2fwp-content%2fuploads%2f2019%2f11%2f00271301-Barbell-Bent-Over-Row_Back-FIX_360.gif&ehk=%2bBPjUpgYtAHAGmFBJrcIS%2fFSH%2fwGFls%2bm%2f9cKi3dXUk%3d&risl=&pid=ImgRaw&r=0',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6719f0043e2ded9bf38f0ddc'),
+    exercise_name: 'Pull-Ups',
+    targeted_muscle: 'Back, Biceps',
+    equipment: 'Pull-Up Bar',
+    instructions: [
+      'Hang from the pull-up bar with your hands slightly wider than shoulder-width.',
+      'Pull your body up until your chin is above the bar.',
+      'Lower yourself back to the starting position.'
+    ],
+    sets: 3,
+    reps: '6-10',
+    image_url: 'https://www.inspireusafoundation.org/wp-content/uploads/2022/09/chin-ups.gif',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6719f0043e2ded9bf38f0ddd'),
+    exercise_name: 'Lat Pulldown',
+    targeted_muscle: 'Back, Biceps',
+    equipment: 'Cable Machine',
+    instructions: [
+      'Sit at the lat pulldown machine and grip the bar with your hands wider than shoulder-width.',
+      'Pull the bar down towards your chest, squeezing your shoulder blades together.',
+      'Slowly return the bar to the starting position.'
+    ],
+    sets: 3,
+    reps: '8-10',
+    image_url: 'https://sporium.net/wp-content/uploads/2020/01/pulldown-min.gif',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6719f0043e2ded9bf38f0dde'),
+    exercise_name: 'Seated Cable Row',
+    targeted_muscle: 'Back',
+    equipment: 'Cable Machine',
+    instructions: [
+      'Sit at the cable row machine with your feet against the platform.',
+      'Grab the handle with both hands and pull it towards your abdomen.',
+      'Squeeze your shoulder blades together and slowly return to the starting position.'
+    ],
+    sets: 3,
+    reps: '8-10',
+    image_url: 'https://i.pinimg.com/originals/3b/19/fd/3b19fd3ba0efec4c4021d3a58dbdba91.gif',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6719f0043e2ded9bf38f0ddf'),
+    exercise_name: 'Bicep Curls',
+    targeted_muscle: 'Biceps',
+    equipment: 'Dumbbells',
+    instructions: [
+      'Stand with a dumbbell in each hand, arms at your sides.',
+      'Curl the dumbbells up towards your shoulders.',
+      'Lower them back to the starting position.'
+    ],
+    sets: 3,
+    reps: '10-12',
+    image_url: 'https://www.inspireusafoundation.org/wp-content/uploads/2022/03/dumbbell-bicep-curl.gif',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6719f0043e2ded9bf38f0de0'),
+    exercise_name: 'Hammer Curls',
+    targeted_muscle: 'Biceps',
+    equipment: 'Dumbbells',
+    instructions: [
+      'Stand with a dumbbell in each hand, arms at your sides.',
+      'Curl the dumbbells up with your palms facing each other.',
+      'Lower them back to the starting position.'
+    ],
+    sets: 3,
+    reps: '10-12',
+    image_url: 'https://i.pinimg.com/originals/0e/87/f0/0e87f0e3ff76ffb83b2df2a6e747682e.gif',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6719f0043e2ded9bf38f0de1'),
+    equipment: 'Preacher Curl Bench',
+    instructions: [
+      'Sit at the preacher bench, rest your arms on the pad, and curl the barbell or dumbbells towards your shoulders.'
+    ],
+    sets: 3,
+    reps: '10-12',
+    image_url: 'https://64.media.tumblr.com/2d744e212411971088a6d4772b7b72c8/fc7d30136f3e6ce7-11/s540x810/a7d8fee0b80ff4eb96e8425baafdd744cf1c7a5c.gif',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6719f0043e2ded9bf38f0de2'),
+    equipment: 'Dumbbells or Barbell',
+    instructions: [
+      'Sit on a bench, rest your forearms on your thighs, and curl the weights upward using just your wrists.'
+    ],
+    sets: 3,
+    reps: '10-12',
+    image_url: 'https://th.bing.com/th/id/R.2c9fc0eab9d24737325d3362e2686f18?rik=pDSUWff9h8Zqjg&riu=http%3a%2f%2fnewlife.com.cy%2fwp-content%2fuploads%2f2019%2f11%2f14411301-Dumbbell-Over-Bench-One-Arm-Reverse-Wrist-Curl_Forearms_360.gif&ehk=xza2hiaSuNZD9PCl3TOKJ9echHuvxse6CWT0l25%2bkhs%3d&risl=&pid=ImgRaw&r=0',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6719f0043e2ded9bf38f0de3'),
+    equipment: 'Dumbbells or Barbell',
+    instructions: [
+      'Sit on a bench, rest your forearms on your thighs, and extend your wrists to lift the weights upwards.'
+    ],
+    sets: 3,
+    reps: '10-12',
+    image_url: 'https://th.bing.com/th/id/R.2c9fc0eab9d24737325d3362e2686f18?rik=pDSUWff9h8Zqjg&riu=http%3a%2f%2fnewlife.com.cy%2fwp-content%2fuploads%2f2019%2f11%2f14411301-Dumbbell-Over-Bench-One-Arm-Reverse-Wrist-Curl_Forearms_360.gif&ehk=xza2hiaSuNZD9PCl3TOKJ9echHuvxse6CWT0l25%2bkhs%3d&risl=&pid=ImgRaw&r=0',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6719f0043e2ded9bf38f0de4'),
+    equipment: 'Dumbbell or Barbell',
+    instructions: [
+      'Stand with your feet shoulder-width apart, raise your heels off the ground, and hold for a second at the top.'
+    ],
+    sets: 3,
+    reps: '10-12',
+    image_url: 'URL_to_calf_raises_image.jpg',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6719f0043e2ded9bf38f0de5'),
+    equipment: 'Machine or Dumbbells',
+    instructions: [
+      'Sit on a bench with feet flat on the ground, place the balls of your feet on the edge of a step, and raise your heels.'
+    ],
+    sets: 3,
+    reps: '10-12',
+    image_url: 'https://www.inspireusafoundation.org/wp-content/uploads/2023/03/seated-calf-raise-dumbbell.gif',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6719f0043e2ded9bf38f0de6'),
+    equipment: 'Dumbbells or Barbell',
+    instructions: [
+      'Stand tall with weights in hand, shrug your shoulders up towards your ears, and lower back down.'
+    ],
+    sets: 3,
+    reps: '10-12',
+    image_url: 'https://th.bing.com/th/id/OIP.9wPY1K9m4UAJ4TECBKBsVQHaHa?rs=1&pid=ImgDetMain',
+    __v: 0
+  }
+]
+TrainSmart> db.exercises.find({})
+[
+  {
+    _id: ObjectId('6719f0043e2ded9bf38f0dd4'),
+    exercise_name: 'Bench Press',
+    targeted_muscle: 'Chest',
+    equipment: 'Barbell',
+    instructions: [
+      'Lie back on a flat bench with a barbell positioned over your chest.',
+      'Lower the barbell to your chest, keeping your elbows at a 45-degree angle.',
+      'Press the barbell back up to the starting position.'
+    ],
+    sets: 3,
+    reps: '6-8',
+    image_url: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhKCgtxMOLLAvkXbDYrToEQ2OirO6g1b4yjWckkn_dCxmmR-8fOPJ3oLPeq41Sat0N923F97ocxaJIOFB6pFS3XdlWLxSZFboYt9nbud5zBztWGGPLuw61laIx4xuHdt7NWC1gCDuRPppKiReUSQovi9EzuIoDjSzR7XOzQkGoY5L3mHpxmAhvkbbbM6Q/w400-h400/Barbell-Bench-Press.gif',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6719f0043e2ded9bf38f0dd5'),
+    exercise_name: 'Push-Ups',
+    targeted_muscle: 'Chest, Triceps',
+    equipment: 'Bodyweight',
+    instructions: [
+      'Get into a plank position with your hands placed shoulder-width apart.',
+      'Lower your body until your chest almost touches the floor.',
+      'Push back up to the starting position.'
+    ],
+    sets: 3,
+    reps: '10-15',
+    image_url: 'https://www.inspireusafoundation.org/wp-content/uploads/2023/06/plyometric-push-ups.gif',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6719f0043e2ded9bf38f0dd6'),
+    exercise_name: 'Dumbbell Flyes',
+    targeted_muscle: 'Chest',
+    equipment: 'Dumbbells',
+    instructions: [
+      'Lie back on a flat bench with a dumbbell in each hand.',
+      'Extend your arms above your chest with a slight bend in the elbows.',
+      'Lower the dumbbells out to the sides until you feel a stretch in your chest.',
+      'Bring the dumbbells back to the starting position.'
+    ],
+    sets: 3,
+    reps: '10-12',
+    image_url: 'https://th.bing.com/th/id/R.530bd32f5a362ccf6acde6ee530ea92f?rik=kpdvSGzHZIISlg&riu=http%3a%2f%2fnewlife.com.cy%2fwp-content%2fuploads%2f2019%2f11%2f03081301-Dumbbell-Fly_Chest-FIX_360.gif&ehk=TK5KmeJcMtmKCQJtbeLlyY78LI98Fo1o28XksW6qST8%3d&risl=&pid=ImgRaw&r=0',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6719f0043e2ded9bf38f0dd7'),
+    exercise_name: 'Incline Bench Press',
+    targeted_muscle: 'Upper Chest',
+    equipment: 'Barbell',
+    instructions: [
+      'Set an incline bench to a 30-45 degree angle.',
+      'Lie back on the bench and hold the barbell above your chest.',
+      'Lower the barbell to your upper chest.',
+      'Press it back up to the starting position.'
+    ],
+    sets: 3,
+    reps: '6-8',
+    image_url: 'https://www.fitadium.com/conseils/wp-content/uploads/2020/08/00471301-Barbell-Incline-Bench-Press_Chest_720.gif',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6719f0043e2ded9bf38f0dd8'),
+    exercise_name: 'Dumbbell Shoulder Press',
+    targeted_muscle: 'Shoulders',
+    equipment: 'Dumbbells',
+    instructions: [
+      'Sit on a bench with back support, holding a dumbbell in each hand at shoulder height.',
+      'Press the dumbbells overhead until your arms are fully extended.',
+      'Lower them back to the starting position.'
+    ],
+    sets: 3,
+    reps: '8-10',
+    image_url: 'https://boxlifemagazine.com/wp-content/uploads/2024/02/Seated-Dumbbell-Overhead-Press.gif',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6719f0043e2ded9bf38f0dd9'),
+    exercise_name: 'Lateral Raises',
+    targeted_muscle: 'Shoulders',
+    equipment: 'Dumbbells',
+    instructions: [
+      'Stand with a dumbbell in each hand at your sides.',
+      'Raise the dumbbells out to the sides until they reach shoulder height.',
+      'Lower them back to the starting position.'
+    ],
+    sets: 3,
+    reps: '10-12',
+    image_url: 'https://www.inspireusafoundation.org/wp-content/uploads/2022/03/dumbbell-lateral-raise.gif',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6719f0043e2ded9bf38f0dda'),
+    exercise_name: 'Front Raises',
+    targeted_muscle: 'Shoulders',
+    equipment: 'Dumbbells',
+    instructions: [
+      'Stand with a dumbbell in each hand at your sides.',
+      'Raise the dumbbells in front of you to shoulder height.',
+      'Lower them back to the starting position.'
+    ],
+    sets: 3,
+    reps: '10-12',
+    image_url: 'https://homeworkouts.org/wp-content/uploads/anim-dumbbell-front-raises.gif',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6719f0043e2ded9bf38f0ddb'),
+    exercise_name: 'Bent-Over Rows',
+    targeted_muscle: 'Back',
+    equipment: 'Barbell',
+    instructions: [
+      'Stand with your feet shoulder-width apart, holding a barbell.',
+      'Bend your knees slightly and lean forward at the hips.',
+      'Pull the barbell towards your lower rib cage, squeezing your shoulder blades together.',
+      'Lower the barbell back to the starting position.'
+    ],
+    sets: 3,
+    reps: '8-10',
+    image_url: 'https://th.bing.com/th/id/R.bc7fb79315d13d39b9612813a641ca5b?rik=IvHIvVMCpwdwsA&riu=http%3a%2f%2fnewlife.com.cy%2fwp-content%2fuploads%2f2019%2f11%2f00271301-Barbell-Bent-Over-Row_Back-FIX_360.gif&ehk=%2bBPjUpgYtAHAGmFBJrcIS%2fFSH%2fwGFls%2bm%2f9cKi3dXUk%3d&risl=&pid=ImgRaw&r=0',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6719f0043e2ded9bf38f0ddc'),
+    exercise_name: 'Pull-Ups',
+    targeted_muscle: 'Back, Biceps',
+    equipment: 'Pull-Up Bar',
+    instructions: [
+      'Hang from the pull-up bar with your hands slightly wider than shoulder-width.',
+      'Pull your body up until your chin is above the bar.',
+      'Lower yourself back to the starting position.'
+    ],
+    sets: 3,
+    reps: '6-10',
+    image_url: 'https://www.inspireusafoundation.org/wp-content/uploads/2022/09/chin-ups.gif',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6719f0043e2ded9bf38f0ddd'),
+    exercise_name: 'Lat Pulldown',
+    targeted_muscle: 'Back, Biceps',
+    equipment: 'Cable Machine',
+    instructions: [
+      'Sit at the lat pulldown machine and grip the bar with your hands wider than shoulder-width.',
+      'Pull the bar down towards your chest, squeezing your shoulder blades together.',
+      'Slowly return the bar to the starting position.'
+    ],
+    sets: 3,
+    reps: '8-10',
+    image_url: 'https://sporium.net/wp-content/uploads/2020/01/pulldown-min.gif',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6719f0043e2ded9bf38f0dde'),
+    exercise_name: 'Seated Cable Row',
+    targeted_muscle: 'Back',
+    equipment: 'Cable Machine',
+    instructions: [
+      'Sit at the cable row machine with your feet against the platform.',
+      'Grab the handle with both hands and pull it towards your abdomen.',
+      'Squeeze your shoulder blades together and slowly return to the starting position.'
+    ],
+    sets: 3,
+    reps: '8-10',
+    image_url: 'https://i.pinimg.com/originals/3b/19/fd/3b19fd3ba0efec4c4021d3a58dbdba91.gif',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6719f0043e2ded9bf38f0ddf'),
+    exercise_name: 'Bicep Curls',
+    targeted_muscle: 'Biceps',
+    equipment: 'Dumbbells',
+    instructions: [
+      'Stand with a dumbbell in each hand, arms at your sides.',
+      'Curl the dumbbells up towards your shoulders.',
+      'Lower them back to the starting position.'
+    ],
+    sets: 3,
+    reps: '10-12',
+    image_url: 'https://www.inspireusafoundation.org/wp-content/uploads/2022/03/dumbbell-bicep-curl.gif',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6719f0043e2ded9bf38f0de0'),
+    exercise_name: 'Hammer Curls',
+    targeted_muscle: 'Biceps',
+    equipment: 'Dumbbells',
+    instructions: [
+      'Stand with a dumbbell in each hand, arms at your sides.',
+      'Curl the dumbbells up with your palms facing each other.',
+      'Lower them back to the starting position.'
+    ],
+    sets: 3,
+    reps: '10-12',
+    image_url: 'https://i.pinimg.com/originals/0e/87/f0/0e87f0e3ff76ffb83b2df2a6e747682e.gif',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6719f0043e2ded9bf38f0de1'),
+    equipment: 'Preacher Curl Bench',
+    instructions: [
+      'Sit at the preacher bench, rest your arms on the pad, and curl the barbell or dumbbells towards your shoulders.'
+    ],
+    sets: 3,
+    reps: '10-12',
+    image_url: 'https://64.media.tumblr.com/2d744e212411971088a6d4772b7b72c8/fc7d30136f3e6ce7-11/s540x810/a7d8fee0b80ff4eb96e8425baafdd744cf1c7a5c.gif',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6719f0043e2ded9bf38f0de2'),
+    equipment: 'Dumbbells or Barbell',
+    instructions: [
+      'Sit on a bench, rest your forearms on your thighs, and curl the weights upward using just your wrists.'
+    ],
+    sets: 3,
+    reps: '10-12',
+    image_url: 'https://th.bing.com/th/id/R.2c9fc0eab9d24737325d3362e2686f18?rik=pDSUWff9h8Zqjg&riu=http%3a%2f%2fnewlife.com.cy%2fwp-content%2fuploads%2f2019%2f11%2f14411301-Dumbbell-Over-Bench-One-Arm-Reverse-Wrist-Curl_Forearms_360.gif&ehk=xza2hiaSuNZD9PCl3TOKJ9echHuvxse6CWT0l25%2bkhs%3d&risl=&pid=ImgRaw&r=0',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6719f0043e2ded9bf38f0de3'),
+    equipment: 'Dumbbells or Barbell',
+    instructions: [
+      'Sit on a bench, rest your forearms on your thighs, and extend your wrists to lift the weights upwards.'
+    ],
+    sets: 3,
+    reps: '10-12',
+    image_url: 'https://th.bing.com/th/id/R.2c9fc0eab9d24737325d3362e2686f18?rik=pDSUWff9h8Zqjg&riu=http%3a%2f%2fnewlife.com.cy%2fwp-content%2fuploads%2f2019%2f11%2f14411301-Dumbbell-Over-Bench-One-Arm-Reverse-Wrist-Curl_Forearms_360.gif&ehk=xza2hiaSuNZD9PCl3TOKJ9echHuvxse6CWT0l25%2bkhs%3d&risl=&pid=ImgRaw&r=0',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6719f0043e2ded9bf38f0de4'),
+    equipment: 'Dumbbell or Barbell',
+    instructions: [
+      'Stand with your feet shoulder-width apart, raise your heels off the ground, and hold for a second at the top.'
+    ],
+    sets: 3,
+    reps: '10-12',
+    image_url: 'URL_to_calf_raises_image.jpg',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6719f0043e2ded9bf38f0de5'),
+    equipment: 'Machine or Dumbbells',
+    instructions: [
+      'Sit on a bench with feet flat on the ground, place the balls of your feet on the edge of a step, and raise your heels.'
+    ],
+    sets: 3,
+    reps: '10-12',
+    image_url: 'https://www.inspireusafoundation.org/wp-content/uploads/2023/03/seated-calf-raise-dumbbell.gif',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6719f0043e2ded9bf38f0de6'),
+    equipment: 'Dumbbells or Barbell',
+    instructions: [
+      'Stand tall with weights in hand, shrug your shoulders up towards your ears, and lower back down.'
+    ],
+    sets: 3,
+    reps: '10-12',
+    image_url: 'https://th.bing.com/th/id/OIP.9wPY1K9m4UAJ4TECBKBsVQHaHa?rs=1&pid=ImgDetMain',
+    __v: 0
+  }
+]

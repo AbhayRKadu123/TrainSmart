@@ -1,0 +1,55 @@
+<%- layout('boilerplate.ejs') %>
+<h1 class="display-3">Session</h1>
+<% let dt=`${data.date}`;%>
+        <%dt=dt.split(' ')%>
+
+<h1 class="display-5">Date&nbsp;:&nbsp;<%=dt[2]%>-<%=dt[1]%>-<%=dt[3]%></h1>
+<h1 class="display-5">Day&nbsp;:&nbsp;<%=dt[0]%></h1>
+
+
+<div class="row row-cols-1 row-cols-md-2 g-4">
+<%for(let i=0;i<data.Exercises.length;i++){%>
+  
+    <div class="card border-secondary mb-3 card mb-3 col mx-auto p-2" style="max-width: 18rem;">
+        <div class="card-header">Exercise&nbsp;:&nbsp;<%=i+1%></div>
+        <div class="card-body text-secondary">
+          <h5 class="card-title"><strong>Muscle&nbsp;:&nbsp;</strong><%=data.Exercises[i].muscle%></h5>
+          <h5 class="card-title"><strong>Exercise&nbsp;:&nbsp;</strong><%=data.Exercises[i].exercise%></h5>
+
+          <p class="card-text"><table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Reps</th>
+                <th scope="col">Weight</th>
+              
+              </tr>
+            </thead>
+            <tbody>
+              
+                
+<%for(let j=0;j<data.Exercises[i].sets.reps.length;j++){%>
+  <tr>
+    <th scope="row"><%=j+1%></th>
+    <td><%=data.Exercises[i].sets.reps[j]%></td>
+    <td><%=data.Exercises[i].sets.weight[j]%></td>
+  
+  </tr>
+<%}%>
+             
+             
+             
+             
+            </tbody>
+          </table></p>
+          <form style="display: inline;"  action="/editexercise/<%=data.Exercises[i]._id%>/<%=view_id%>">
+            <button class="btn btn-primary  card-link" type="submit">Edit</button>
+          </form>
+          <form style="display: inline;" method="POST" action="/delete-exercise/<%=data.Exercises[i]._id%>/<%=view_id%>?_method=DELETE">
+            <button class="btn btn-danger  card-link" type="submit">Del</button>
+          </form>
+        </div>
+      </div>
+
+<%}%>
+</div>

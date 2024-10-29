@@ -1,0 +1,37 @@
+use college //create db if it does not exist
+db.student.insertOne({name:'adam',rollno:29})//create collection if it does not exist in mongodb a collection can contain document with diff value
+db.students.find({})//return all document in collection
+db.student.insertMany([{name:'catlyn',marks:64,city:'delhi'},{name:'abhay',marks:100,city:100}])//inserting multiple value in db
+
+
+find
+db.student.find({})//all value
+db.student.find({city:'delhi'})//return all value according to condition return refrence to original
+ db.student.findOne({city:'delhi'})//return only one value return actual document
+
+ db.student.find({city:'delhi',marks:75})//applying multiple condition
+  db.student.find({marks:{$gt:60}}) // used to find all student whose marks are greater than 60
+  db.student.find({city:{$in:["delhi","mumbai"]}})//return all value whose city value is mumbaii or delhi
+
+ db.student.find({$or:[{marks:{gt:75}},{city:'delhi'}]})// marks>75 or city is delhi
+
+
+ db.students.updateOne({name:"John Doe"},{$set:{gender:"homosexual"}})//first parameter is filter and second one is what we want to document
+
+ db.students.updateMany({gender:'male'},{$set:{gender:'ABHAY'}}) //update many 
+
+ db.students.insertOne({name:'fara',performance:{marks:88,grade:'A'}})//nestingg 
+
+ db.students.find({"performance.marks":88}) //finding using nestingg in case of nesting key must be in double quote
+
+ db.students.deleteOne({name:'Akshay'})//first one is filter
+
+  db.students.deleteMany({gender:'Abhay'})
+
+  db.dropDatabase()//drop db
+
+Model.updateOne(
+  { <filter> },                // Filter to match the document(s)
+  { $pull: { <arrayField>: <value or condition> } }, // Pull value or condition from the array
+  { <options> }                // (Optional) Update options like { new: true, multi: true }
+);

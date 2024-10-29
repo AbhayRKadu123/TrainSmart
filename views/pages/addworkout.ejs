@@ -1,0 +1,63 @@
+<%- layout('boilerplate.ejs') %>
+  <form method="post" action="/exercisedata" class="py-5">
+    <div class="card-body">
+      <div class="container exercisecontainer">
+        <div class="card exercise shadow-sm mb-4"
+          style="width: 100%; max-width: 20rem; border-radius: 10px; border: 2px solid #007bff;">
+          <div class="card-body">
+            <h5 class="card-title text-center mb-3" style="font-weight: bold;">Exercise 1</h5>
+            <select required name="Exercises[0][muscle]" class="form-select form-select-lg mb-3"
+              aria-label="Select Muscle Group">
+              <option selected>Select Muscle Group</option>
+              <option value="chest">Chest</option>
+              <option value="biceps">Biceps</option>
+              <option value="triceps">Triceps</option>
+              <option value="shoulders">Shoulders</option>
+              <option value="back">Back</option>
+              <option value="abs">Abs</option>
+              <option value="quads">Quads</option>
+              <option value="hamstrings">Hamstrings</option>
+              <option value="glutes">Glutes</option>
+              <option value="calves">Calves</option>
+              <option value="forearms">Forearms</option>
+              <option value="neck">Neck</option>
+              <option value="traps">Traps</option>
+              <option value="lats">Lats</option>
+              <option value="obliques">Obliques</option>
+              <option value="cardio">Cardio</option>
+            </select>
+            <input required class="form-control form-control-lg mb-3" name="Exercises[0][exercise]" type="text"
+              placeholder="Enter Exercise...">
+            <div class="setscontainer">
+              <h6 class="text-muted mb-3">Sets</h6>
+              <div class="set mb-3">
+                <input class="form-control form-control-sm mb-2" name="Exercises[0][sets][reps]" type="number"
+                  placeholder="Reps...">
+                <input required class="form-control form-control-sm mb-2" name="Exercises[0][sets][weight]"
+                  type="number" placeholder="Weight (kg)">
+                <button class="btn btn-danger btn-sm deleteset" type="button">Remove Set</button>
+              </div>
+            </div>
+            <button class="btn btn-primary btn-sm mt-3 addset" type="button">Add Set</button>
+            <button class="btn btn-danger btn-sm mt-3 DeleteExercise" type="button">Remove Exercise</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Textarea for Workout Notes -->
+    <div class="container my-4">
+      <h5 class="text-center mb-3">Workout Notes</h5>
+      <textarea class="form-control" name="workoutNotes" rows="4"
+        placeholder="Add any notes about your workout..."></textarea>
+    </div>
+
+    <!-- Fixed Button Section -->
+    <div class="fixed-bottom bg-white py-2">
+      <div style="z-index: 2;" class="container d-flex justify-content-center">
+        <button class="btn btn-outline-primary me-3 flex-grow-1" type="button" id="AddExercise">Add Exercise</button>
+        <button class="btn btn-success flex-grow-1" type="submit">Submit Workout</button>
+      </div>
+    </div>
+
+  </form>

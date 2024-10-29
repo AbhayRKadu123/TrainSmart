@@ -14,7 +14,7 @@ let {isauthenticated,resavepath}=require('./MiddleWare')
 let User = require("./schemas/user")
 var methodOverride = require('method-override')
 const { url } = require('inspector');
-const { exercises } = require('./Data/data');
+// const { exercises } = require('./Data/data');
 let Joi=require('joi')
 require('dotenv').config();
 let {schema}=require("./SchemaValidation")

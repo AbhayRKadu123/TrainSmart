@@ -2,7 +2,8 @@ const { array } = require('joi');
 const mongoose = require('mongoose');
 const data =require('./data')
 main().catch(err => console.log(err));
-require('dotenv').config();
+require('../dotenv').config();
+
 async function main() {
   await mongoose.connect(process.env.mongourl);
 
@@ -28,4 +29,7 @@ let res=await Exercises.insertMany(
     data.exercises)
     console.log(res)
 }
-AddData()
+async function deleteData() {
+  let res=await Exercises.deleteMany({})
+  }
+deleteData()

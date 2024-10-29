@@ -1,6 +1,9 @@
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+    console.log('Environment variables loaded from .env');
+}
 const { text } = require('express');
 const mongoose = require('mongoose');
-require('dotenv').config();
 
 const user=require("./user");
 const { ref } = require('joi');

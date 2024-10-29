@@ -5,7 +5,7 @@ const { required } = require('joi');
 let Schema=mongoose.Schema;
 // Connect to the database
 async function main() {
-  await mongoose.connect(process.env.mongourl);
+  await mongoose.connect(process.env.MONGO_URL);
 }
 
 main().catch(err => console.log(err));

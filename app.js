@@ -24,7 +24,7 @@ app.engine('ejs', ejsmate);
 app.use(methodOverride('_method'))
 app.set('view-engine', 'ejs')
 const store = MongoStore.create({
-    mongoUrl: process.env.mongoUrl,
+    mongoUrl: process.env.MONGO_URL,
     crypto: {
       secret: process.env.secret
     },

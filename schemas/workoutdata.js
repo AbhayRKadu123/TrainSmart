@@ -10,7 +10,7 @@ const { ref } = require('joi');
 
 
 async function main() {
-  await mongoose.connect(process.env.mongourl);
+  await mongoose.connect(process.env.MONGO_URL);
 }
 main().catch(err => console.log(err));
 const Sets=mongoose.Schema({

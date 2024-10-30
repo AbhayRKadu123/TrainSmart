@@ -189,12 +189,13 @@ app.get("/SingleMuscle",isauthenticated,WrapAsync(async(req,res)=>{
         }))
 app.get("/viewsession/:id",isauthenticated, WrapAsync(async (req, res, next) => {
 const { id } = req.params;
-const data = await sessions.findById(id);
-        // console.log(data.Exercises)
+let data = await sessions.findById(id);
+        console.log(data)
 res.locals.view_id = id;
-console.log(data.Exercises[0].sets)
+// console.log(data.Exercises[0].sets)
         // console.log(data.Exercises[0].sets)
      res.render("pages/viewsession.ejs", { data })
+    // res.send(data)
 
 
 }))
@@ -247,26 +248,32 @@ app.delete('/delete-exercise/:id/:vid',isauthenticated, WrapAsync(async (req, re
     console.log(viewId)
 
     if (exercises.Exercises.length > 1) {
-        const val = await sessions.updateOne(
+         await sessions.updateOne(
             { _id: viewId },
             { $pull: { Exercises: { _id: itemId } } },
         )
+        req.flash("val","Exercise deleted successfully !")
+
+        res.redirect(`/viewsession/${viewId}`);
     }else{
-        req.flash("errval","Session can't be empty !")
+    //     req.flash("error","Session can't be empty !")
     
+    req.flash("errval","Session can't be empty !")
+
     res.redirect(`/viewsession/${viewId}`);
+    
+    // res.send(viewId)
 
     }
-    req.flash("val","Exercise deleted successfully !")
-
-    res.redirect(`/viewsession/${viewId}`);
+   
     // res.send('exercise deleted') 
 }))
 app.get("/searchbydate",isauthenticated,WrapAsync( async (req, res) => {
     let date = new Date(req.query.date);
-    date = date.toString().split("T")[0].slice(0, 15);
+    date = req.query.date;
     const data = await sessions.find({ date: date,owner:req.user });
-
+console.log(req.query.date)
+console.log(data)
 
     res.render("pages/allsessions.ejs", { data })
 }))
